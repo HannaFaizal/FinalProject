@@ -22,10 +22,11 @@ public class PatientList {
     @JoinColumn(name = "stfId",insertable = false,updatable=false)
 	private StaffDetails staffDetails;
 	private Date appDate;
+	
 	public PatientList() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
 	public PatientList(int appNbr, int patId, PatientDetails patientDetails, int stfId, StaffDetails staffDetails,
 			Date appDate) {
 		super();

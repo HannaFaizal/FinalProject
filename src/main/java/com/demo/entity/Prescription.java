@@ -21,15 +21,15 @@ public class Prescription {
 	
 	private String stfFName;
 	@ManyToOne
-    @JoinColumn(name = "stfFName",insertable = false,updatable=false)
+    @JoinColumn(name = "stfId",insertable = false,updatable=false)
 	
 	private StaffDetails staffDetails;
 	private String presc;
 	private String medi;
 	public Prescription() {
-		super();
-		
+		super();	
 	}
+	
 	public Prescription(int prescId, int patId, String stfFName, String presc, String medi) {
 		super();
 		this.prescId = prescId;
