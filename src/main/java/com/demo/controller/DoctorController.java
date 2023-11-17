@@ -1,4 +1,4 @@
-package cm.demo.controller;
+package com.demo.controller;
 
 public class DoctorController {
 
