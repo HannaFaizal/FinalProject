@@ -20,7 +20,7 @@ public class ITestListServiceImpl implements ITestListService {
 	public List<TestList> findAll() {
 		return testListRepository.findAll();
 	}
-
+	
 	@Override
 	public TestList findById(int theId) {
 		Optional<TestList> result = testListRepository.findById(theId);
