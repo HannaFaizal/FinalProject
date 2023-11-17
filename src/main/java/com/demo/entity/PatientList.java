@@ -10,6 +10,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class PatientList {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int appNbr;

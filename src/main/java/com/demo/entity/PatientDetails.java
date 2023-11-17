@@ -2,7 +2,16 @@ package com.demo.entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class PatientDetails {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int patID;
 	private String patFName;
 	private String patAdd;
@@ -86,42 +95,34 @@ public class PatientDetails {
 
 	public Long getPatMob() {
 		return patMob;
-
 	}
 
 	public void setPatMob(Long patMob) {
 		this.patMob = patMob;
-
 	}
 
 	public Long getPatEmg() {
 		return patEmg;
-
 	}
 
 	public void setPatEmg(Long patEmg) {
 		this.patEmg = patEmg;
-
 	}
 
 	public String getPatGend() {
 		return patGend;
-
 	}
 
 	public void setPatGend(String patGend) {
 		this.patGend = patGend;
-
 	}
 
 	public String getPatEmail() {
 		return patEmail;
-
 	}
 
 	public void setPatEmail(String patEmail) {
 		this.patEmail = patEmail;
-
 	}
 
 }
