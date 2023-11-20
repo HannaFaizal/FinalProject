@@ -13,22 +13,35 @@ public class UserDetails {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;
 	private String userPass;
-	private int stfId;
+	private int staffId;
 	@ManyToOne
-	@JoinColumn(name = "stfId", insertable = false, updatable = false)
+	@JoinColumn(name = "staffId", insertable = false, updatable = false)
 	private StaffDetails staffdetails;
 	
 	public UserDetails() {
 		super();
 	}
 	
+	
+	public int getStaffId() {
+		return staffId;
+	}
+
+
+	public void setStaffId(int staffId) {
+		this.staffId = staffId;
+	}
+
+
 	public UserDetails(int userId, String userPass, int staffId, StaffDetails staffdetails) {
 		super();
 		this.userId = userId;
 		this.userPass = userPass;
-		this.stfId = staffId;
+		this.staffId = staffId;
 		this.staffdetails = staffdetails;
 	}
+
+
 	public int getUserId() {
 		return userId;
 	}
@@ -41,12 +54,12 @@ public class UserDetails {
 	public void setUserPass(String userPass) {
 		this.userPass = userPass;
 	}
-	public int getStaffId() {
-		return stfId;
+
+	public UserDetails(int staffId) {
+		super();
+		this.staffId = staffId;
 	}
-	public void setStaffId(int staffId) {
-		this.stfId = staffId;
-	}
+
 	public StaffDetails getStaffdetails() {
 		return staffdetails;
 	}

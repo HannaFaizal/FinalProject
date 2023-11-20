@@ -6,22 +6,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/HannaFaizal/FinalProject.git
 @Entity
 public class PatientDetails {
-//<<<<<<< HEAD
-//	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	private int patID;
-//=======
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int patId;
->>>>>>> branch 'master' of https://github.com/HannaFaizal/FinalProject.git
+
 	private String patFName;
 	private String patAdd;
 	private String patBldGrp;

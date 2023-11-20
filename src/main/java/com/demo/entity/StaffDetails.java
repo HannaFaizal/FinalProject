@@ -6,11 +6,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 @Entity
 public class StaffDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int stfId;
+	private int staffId;
 	private String stfFName;
 	private String stfGnd;
 	private Date stfDob;
@@ -31,11 +32,11 @@ public class StaffDetails {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public StaffDetails(int stfId, String stfFName, String stfGnd, Date stfDob, long stfMob, String stfAdd,
+	public StaffDetails(int staffId, String stfFName, String stfGnd, Date stfDob, long stfMob, String stfAdd,
 			String stfDept, String stfQualif, String stfSpec, Date stfJod, int stfSal, String stfBldGrp,
 			String stfEmail, boolean isActive) {
 		super();
-		this.stfId = stfId;
+		this.staffId = staffId;
 		this.stfFName = stfFName;
 		this.stfGnd = stfGnd;
 		this.stfDob = stfDob;
@@ -51,11 +52,11 @@ public class StaffDetails {
 		this.isActive = isActive;
 	}
 
-	public int getStfId() {
-		return stfId;
+	public int getStaffId() {
+		return staffId;
 	}
-	public void setStfId(int stfId) {
-		this.stfId = stfId;
+	public void setStaffId(int stfId) {
+		this.staffId = stfId;
 	}
 	public String getStfFName() {
 		return stfFName;
