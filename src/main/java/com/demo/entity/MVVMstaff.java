@@ -10,6 +10,8 @@ public class MVVMstaff {
 	private String stfAdd;
 	private String stfDept;
 	private String stfQualif;
+	private Date stfJod;
+	
 	private int stfSal;
 	private String stfBldGrp;
 	private String stfEmail;
@@ -22,9 +24,11 @@ public class MVVMstaff {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MVVMstaff( String stfFName, String stfGnd, Date stfDob, long stfMob, String stfAdd,
-			String stfDept, String stfQualif, int stfSal, String stfBldGrp, String stfEmail, String stfSpec,
-			String userId, String userPassword) {
+	
+	
+	public MVVMstaff(String stfFName, String stfGnd, Date stfDob, long stfMob, String stfAdd, String stfDept,
+			String stfQualif, Date stfJod, int stfSal, String stfBldGrp, String stfEmail, String stfSpec, String userId,
+			String userPassword) {
 		super();
 		this.stfFName = stfFName;
 		this.stfGnd = stfGnd;
@@ -33,6 +37,7 @@ public class MVVMstaff {
 		this.stfAdd = stfAdd;
 		this.stfDept = stfDept;
 		this.stfQualif = stfQualif;
+		this.stfJod = stfJod;
 		this.stfSal = stfSal;
 		this.stfBldGrp = stfBldGrp;
 		this.stfEmail = stfEmail;
@@ -40,7 +45,8 @@ public class MVVMstaff {
 		this.userId = userId;
 		this.userPassword = userPassword;
 	}
-	
+
+
 	public String getStfFName() {
 		return stfFName;
 	}
@@ -82,6 +88,12 @@ public class MVVMstaff {
 	}
 	public void setStfQualif(String stfQualif) {
 		this.stfQualif = stfQualif;
+	}
+	public Date getStfJod() {
+		return stfJod;
+	}
+	public void setStfJod(Date stfJod) {
+		this.stfJod = stfJod;
 	}
 	public int getStfSal() {
 		return stfSal;
