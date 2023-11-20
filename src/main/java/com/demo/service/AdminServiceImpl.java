@@ -56,6 +56,7 @@ private AdminRepository adminRepository;
 		stfdet.setStfSal(theAdmin.getStfSal());
 		stfdet.setStfBldGrp(theAdmin.getStfBldGrp());
 		stfdet.setStfEmail(theAdmin.getStfEmail());
+	
 		adminRepository.save(stfdet);
 		//create objEct of uesrdetails--ud
 		

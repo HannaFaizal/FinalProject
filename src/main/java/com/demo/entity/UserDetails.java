@@ -15,7 +15,7 @@ public class UserDetails {
 	private String userPass;
 	private int staffId;
 	@ManyToOne
-	@JoinColumn(name = "stfId", insertable = false, updatable = false)
+	@JoinColumn(name = "staffId", insertable = false, updatable = false)
 	private StaffDetails staffdetails;
 	
 	public UserDetails() {
