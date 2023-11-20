@@ -21,7 +21,7 @@ public class TestList {
 	private String patFName;
 	private String stfFName;
 	@ManyToOne
-	@JoinColumn(name = "stfId", insertable = false, updatable = false)
+	@JoinColumn(name = "staffId", insertable = false, updatable = false)
 	private StaffDetails staffDetails;
 	private Date testDate;
 	private int testId;

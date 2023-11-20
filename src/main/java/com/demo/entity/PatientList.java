@@ -17,25 +17,25 @@ public class PatientList {
 	@ManyToOne
     @JoinColumn(name = "patId",insertable = false,updatable=false)
 	private PatientDetails patientDetails;
-	private int stfId;
+	private int staffId;
 	@ManyToOne
-    @JoinColumn(name = "stfId",insertable = false,updatable=false)
+    @JoinColumn(name = "staffId",insertable = false,updatable=false)
 	private StaffDetails staffDetails;
-	private Date appDate;
+	private Date apptDate;
 	
 	public PatientList() {
 		super();
 	}
 	
 	public PatientList(int appNbr, int patId, PatientDetails patientDetails, int stfId, StaffDetails staffDetails,
-			Date appDate) {
+			Date apptDate) {
 		super();
 		this.appNbr = appNbr;
 		this.patId = patId;
 		this.patientDetails = patientDetails;
-		this.stfId = stfId;
+		this.staffId = staffId;
 		this.staffDetails = staffDetails;
-		this.appDate = appDate;
+		this.apptDate = apptDate;
 	}
 	public int getAppNbr() {
 		return appNbr;
@@ -55,11 +55,11 @@ public class PatientList {
 	public void setPatientDetails(PatientDetails patientDetails) {
 		this.patientDetails = patientDetails;
 	}
-	public int getStfId() {
-		return stfId;
+	public int getStaffId() {
+		return staffId;
 	}
 	public void setStfId(int stfId) {
-		this.stfId = stfId;
+		this.staffId = stfId;
 	}
 	public StaffDetails getStaffDetails() {
 		return staffDetails;
@@ -67,12 +67,19 @@ public class PatientList {
 	public void setStaffDetails(StaffDetails staffDetails) {
 		this.staffDetails = staffDetails;
 	}
-	public Date getAppDate() {
-		return appDate;
+
+	public Date getApptDate() {
+		return apptDate;
 	}
-	public void setAppDate(Date appDate) {
-		this.appDate = appDate;
+
+	public void setApptDate(Date apptDate) {
+		this.apptDate = apptDate;
 	}
+
+	public void setStaffId(int staffId) {
+		this.staffId = staffId;
+	}
+	
 	
 	
 

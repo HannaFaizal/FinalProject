@@ -21,7 +21,7 @@ public class Prescription {
 	
 	private String stfFName;
 	@ManyToOne
-    @JoinColumn(name = "stfId",insertable = false,updatable=false)
+    @JoinColumn(name = "staffId",insertable = false,updatable=false)
 	
 	private StaffDetails staffDetails;
 	private String presc;

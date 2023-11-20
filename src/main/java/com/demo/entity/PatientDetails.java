@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 public class PatientDetails {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int patID;
+	private int patId;
 	private String patFName;
 	private String patAdd;
 	private String patBldGrp;
@@ -25,11 +25,11 @@ public class PatientDetails {
 		super();
 	}
 
-	public PatientDetails(int patID, String patFName, String patAdd, String patBldGrp, Date patDob, int patAge, Long patMob,
+	public PatientDetails(int patId, String patFName, String patAdd, String patBldGrp, Date patDob, int patAge, Long patMob,
 			Long patEmg, String patGend, String patEmail) {
 
 		super();
-		this.patID=patID;
+		this.patId=patId;
 		this.patFName = patFName;
 		this.patAdd = patAdd;
 		this.patBldGrp = patBldGrp;
@@ -41,14 +41,12 @@ public class PatientDetails {
 		this.patEmail = patEmail;
 	}
 
-	
-	
-	public int getPatID() {
-		return patID;
+	public int getPatId() {
+		return patId;
 	}
 
-	public void setPatID(int patID) {
-		this.patID = patID;
+	public void setPatId(int patId) {
+		this.patId = patId;
 	}
 
 	public String getPatFName() {
