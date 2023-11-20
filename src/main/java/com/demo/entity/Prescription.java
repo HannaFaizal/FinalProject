@@ -21,15 +21,19 @@ public class Prescription {
 	
 	private String stfFName;
 	@ManyToOne
+<<<<<<< HEAD
     @JoinColumn(name = "stfId",insertable = false,updatable=false)
+=======
+    @JoinColumn(name = "staffId",insertable = false,updatable=false)
+>>>>>>> branch 'master' of https://github.com/HannaFaizal/FinalProject.git
 	
 	private StaffDetails staffDetails;
 	private String presc;
 	private String medi;
 	public Prescription() {
-		super();
-		
+		super();	
 	}
+	
 	public Prescription(int prescId, int patId, String stfFName, String presc, String medi) {
 		super();
 		this.prescId = prescId;

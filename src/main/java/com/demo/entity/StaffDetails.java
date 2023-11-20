@@ -50,6 +50,7 @@ public class StaffDetails {
 		this.stfEmail = stfEmail;
 		this.isActive = isActive;
 	}
+
 	public int getStfId() {
 		return stfId;
 	}

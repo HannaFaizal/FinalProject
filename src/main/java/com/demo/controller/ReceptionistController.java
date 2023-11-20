@@ -44,7 +44,7 @@ public class ReceptionistController {
 
 	@PostMapping("/receptionists")
 	public PatientDetails addPatient(@RequestBody PatientDetails thePatientDetails) {
-		thePatientDetails.setPatID(0);
+		thePatientDetails.setPatId(0);
 		iReceptionistService.save(thePatientDetails);
 		return thePatientDetails;
 	}
