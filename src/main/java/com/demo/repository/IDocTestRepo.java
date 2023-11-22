@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.demo.entity.TestList;
 
-public interface ITestListRepository extends JpaRepository<TestList , Integer>{
+
+public interface IDocTestRepo extends JpaRepository <TestList, Integer>{
 
 }

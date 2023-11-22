@@ -1,130 +1,124 @@
 package com.demo.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
+import jakarta.persistence.Table;
 @Entity
+@Table(name = "test_list")
 public class TestList {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int testNo;
-	private int patId;
-	@ManyToOne
-	@JoinColumn(name = "patId", insertable = false, updatable = false)
-	private PatientDetails patientDetails;
-	private String patFName;
-	private String stfFName;
-	@ManyToOne
-	@JoinColumn(name = "staffId", insertable = false, updatable = false)
-	private StaffDetails staffDetails;
-	private Date testDate;
-	private int testId;
-	private String testName;
-	private boolean isActive;
 
-	public TestList(int testNo, int patId, PatientDetails patientDetails, String patFName, String stfFName,
-			StaffDetails staffDetails, Date testDate, int testId, String testName, boolean isActive) {
-		super();
-		this.testNo = testNo;
-		this.patId = patId;
-		this.patientDetails = patientDetails;
-		this.patFName = patFName;
-		this.stfFName = stfFName;
-		this.staffDetails = staffDetails;
-		this.testDate = testDate;
-		this.testId = testId;
-		this.testName = testName;
-		this.isActive = isActive;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "test_no")
+    private int testNo;
 
-	public TestList() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    @Column(name = "pat_id")
+    private int patId;
 
-	public int getTestNo() {
-		return testNo;
-	}
+    @ManyToOne
+    @JoinColumn(name = "pat_id",insertable=false, updatable=false)
+    private PatientDetails patientDetails;
 
-	public void setTestNo(int testNo) {
-		this.testNo = testNo;
-	}
+    @Column(name = "stf_id")
+    private int stfId;
 
-	public int getPatId() {
-		return patId;
-	}
+    @ManyToOne
+    @JoinColumn(name = "stf_id",insertable=false, updatable=false)
+    private StaffDetails staffDetails;
 
-	public void setPatId(int patId) {
-		this.patId = patId;
-	}
+    @Column(name = "test_id")
+    private int testId;
 
-	public PatientDetails getPatientDetails() {
-		return patientDetails;
-	}
+    @ManyToOne
+    @JoinColumn(name = "test_id",insertable=false, updatable=false)
+    private TestDetails testDetails;
 
-	public void setPatientDetails(PatientDetails patientDetails) {
-		this.patientDetails = patientDetails;
-	}
+    @Column(name = "is_active")
+    private boolean active;
 
-	public String getPatFName() {
-		return patFName;
-	}
+    // Default constructor
+    public TestList() {
+    }
 
-	public void setPatFName(String patFName) {
-		this.patFName = patFName;
-	}
+    // Constructor with parameters
+    public TestList(int patId, int stfId, int testId, boolean active) {
+        this.patId = patId;
+        this.stfId = stfId;
+        this.testId = testId;
+        this.active = active;
+    }
 
-	public String getStfFName() {
-		return stfFName;
-	}
+    // Getters and setters
 
-	public void setStfFName(String stfFName) {
-		this.stfFName = stfFName;
-	}
+    public int getTestNo() {
+        return testNo;
+    }
 
-	public StaffDetails getStaffDetails() {
-		return staffDetails;
-	}
+    public void setTestNo(int testNo) {
+        this.testNo = testNo;
+    }
 
-	public void setStaffDetails(StaffDetails staffDetails) {
-		this.staffDetails = staffDetails;
-	}
+    public int getPatId() {
+        return patId;
+    }
 
-	public Date getTestDate() {
-		return testDate;
-	}
+    public void setPatId(int patId) {
+        this.patId = patId;
+    }
 
-	public void setTestDate(Date testDate) {
-		this.testDate = testDate;
-	}
+    public PatientDetails getPatientDetails() {
+        return patientDetails;
+    }
 
-	public int getTestId() {
-		return testId;
-	}
+    public void setPatientDetails(PatientDetails patientDetails) {
+        this.patientDetails = patientDetails;
+    }
 
-	public void setTestId(int testId) {
-		this.testId = testId;
-	}
+    public int getStfId() {
+        return stfId;
+    }
 
-	public String getTestName() {
-		return testName;
-	}
+    public void setStfId(int stfId) {
+        this.stfId = stfId;
+    }
 
-	public void setTestName(String testName) {
-		this.testName = testName;
-	}
+    public StaffDetails getStaffDetails() {
+        return staffDetails;
+    }
 
-	public boolean isActive() {
-		return isActive;
-	}
+    public void setStaffDetails(StaffDetails staffDetails) {
+        this.staffDetails = staffDetails;
+    }
 
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
+    public int getTestId() {
+        return testId;
+    }
+
+    public void setTestId(int testId) {
+        this.testId = testId;
+    }
+
+    public TestDetails getTestDetails() {
+        return testDetails;
+    }
+
+    public void setTestDetails(TestDetails testDetails) {
+        this.testDetails = testDetails;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

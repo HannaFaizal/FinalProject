@@ -19,49 +19,49 @@ import com.demo.service.ITestReportService;
 @RequestMapping("/api")
 public class TestReportController {
 
-	private ITestReportService testReportService;
+private ITestReportService testReportService;
 
-	@Autowired
-	public TestReportController(ITestReportService thetestReportService) {
-		testReportService = thetestReportService;
-	}
+@Autowired
+public TestReportController(ITestReportService thetestReportService) {
+testReportService = thetestReportService;
+}
 
-	@GetMapping("/testreport")
-	public List<TestReport> findAll() {
-		System.out.println("From controller");
-		return testReportService.findAll();
-	}
+@GetMapping("/testreport")
+public List<TestReport> findAll() {
+System.out.println("From controller");
+return testReportService.findAll();
+}
 
-	@GetMapping("/testreport/{PatId}")
-	public TestReport getTestReport(@PathVariable int PatId) {
-		TestReport theTestReport = testReportService.findById(PatId);
-		if (theTestReport == null) {
-			throw new RuntimeException("test id not found-" + PatId);
-		}
-		return theTestReport;
-	}
+@GetMapping("/testreport/{PatId}")
+public TestReport getTestReport(@PathVariable int PatId) {
+TestReport theTestReport = testReportService.findById(PatId);
+if (theTestReport == null) {
+throw new RuntimeException("test id not found-" + PatId);
+}
+return theTestReport;
+}
 
-	@PostMapping("/testreport")
-	public TestReport addTestReport(@RequestBody TestReport theTestReport) {
-		theTestReport.setPatId(0);
-		testReportService.save(theTestReport);
-		return theTestReport;
+@PostMapping("/testreport")
+public TestReport addTestReport(@RequestBody TestReport theTestReport) {
+// theTestReport.setPatId(0);
+testReportService.save(theTestReport);
+return theTestReport;
 
-	}
+}
 
-//	@PutMapping("/testreport/{PatId}")
-//	public TestReport updateTestReport(@PathVariable int PatId, @RequestBody TestReport theTestReport) {
-//		TestReport tr = TestReport.findById(PatId);
-//		if (theTestReport == null) {
-//			throw new RuntimeException("test id not found-" + PatId);
-//		}
+// @PutMapping("/testreport/{PatId}")
+// public TestReport updateTestReport(@PathVariable int PatId, @RequestBody TestReport theTestReport) {
+// TestReport tr = TestReport.findById(PatId);
+// if (theTestReport == null) {
+// throw new RuntimeException("test id not found-" + PatId);
+// }
 //
-//		td.setTestId(theTestDetails.getTestId());
-//		td.setTestName(theTestDetails.getTestName());
-//		td.setTestPrice(theTestDetails.getTestPrice());
-//		td.setActive(theTestDetails.isActive());
-//		testDetailsService.save(tr);
-//		return tr;
-//	}
-	
+// td.setTestId(theTestDetails.getTestId());
+// td.setTestName(theTestDetails.getTestName());
+// td.setTestPrice(theTestDetails.getTestPrice());
+// td.setActive(theTestDetails.isActive());
+// testDetailsService.save(tr);
+// return tr;
+// }
+
 }

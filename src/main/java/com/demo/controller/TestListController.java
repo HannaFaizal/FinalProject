@@ -18,49 +18,49 @@ import com.demo.service.ITestListService;
 @RequestMapping("/api")
 public class TestListController {
 
-	private ITestListService testListService;
+private ITestListService testListService;
 
-	@Autowired
-	public TestListController(ITestListService thetestListService) {
-		testListService = thetestListService;
-	}
+@Autowired
+public TestListController(ITestListService thetestListService) {
+testListService = thetestListService;
+}
 
-	@GetMapping("/testlist")
-	public List<TestList> findAll() {
-		System.out.println("From controller");
-		return testListService.findAll();
-	}
+@GetMapping("/testlist")
+public List<TestList> findAll() {
+System.out.println("From controller");
+return testListService.findAll();
+}
 
-	@GetMapping("/testlist/{PatId}")
-	public TestList getTestList(@PathVariable int PatId) {
-		TestList theTestList = testListService.findById(PatId);
-		if (theTestList == null) {
-			throw new RuntimeException("test id not found-" + PatId);
-		}
-		return theTestList;
-	}
+@GetMapping("/testlist/{PatId}")
+public TestList getTestList(@PathVariable int PatId) {
+TestList theTestList = testListService.findById(PatId);
+if (theTestList == null) {
+throw new RuntimeException("test id not found-" + PatId);
+}
+return theTestList;
+}
 
-	@PostMapping("/testlist")
-	public TestList addTestList(@RequestBody TestList theTestList) {
-		theTestList.setPatId(0);
-		testListService.save(theTestList);
-		return theTestList;
+@PostMapping("/testlist")
+public TestList addTestList(@RequestBody TestList theTestList) {
+theTestList.setPatId(0);
+testListService.save(theTestList);
+return theTestList;
 
-	}
+}
 
-//	@PutMapping("/testlist/{PatId}")
-//	public TestReport updateTestReport(@PathVariable int PatId, @RequestBody TestReport theTestReport) {
-//		TestReport tr = TestReport.findById(PatId);
-//		if (theTestReport == null) {
-//			throw new RuntimeException("test id not found-" + PatId);
-//		}
+// @PutMapping("/testlist/{PatId}")
+// public TestReport updateTestReport(@PathVariable int PatId, @RequestBody TestReport theTestReport) {
+// TestReport tr = TestReport.findById(PatId);
+// if (theTestReport == null) {
+// throw new RuntimeException("test id not found-" + PatId);
+// }
 //
-//		td.setTestId(theTestDetails.getTestId());
-//		td.setTestName(theTestDetails.getTestName());
-//		td.setTestPrice(theTestDetails.getTestPrice());
-//		td.setActive(theTestDetails.isActive());
-//		testDetailsService.save(tr);
-//		return tr;
-//	}
-	
+// td.setTestId(theTestDetails.getTestId());
+// td.setTestName(theTestDetails.getTestName());
+// td.setTestPrice(theTestDetails.getTestPrice());
+// td.setActive(theTestDetails.isActive());
+// testDetailsService.save(tr);
+// return tr;
+// }
+
 }

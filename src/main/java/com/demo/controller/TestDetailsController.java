@@ -19,60 +19,62 @@ import com.demo.service.ITestDetailsService;
 @RequestMapping("/api")
 public class TestDetailsController {
 
-	private ITestDetailsService testDetailsService;
+private ITestDetailsService testDetailsService;
 
-	@Autowired
-	public TestDetailsController(ITestDetailsService theTestDetailsService) {
-		testDetailsService = theTestDetailsService;
-	}
+@Autowired
+public TestDetailsController(ITestDetailsService theTestDetailsService) {
+testDetailsService = theTestDetailsService;
+}
 
-	@GetMapping("/testdetails")
-	public List<TestDetails> findAll() {
-		System.out.println("From controller");
-		return testDetailsService.findAll();
-	}
+@GetMapping("/testdetails")
+public List<TestDetails> findAll() {
+System.out.println("From controller");
+return testDetailsService.findAll();
+}
 
-	@GetMapping("/testdetails/{testId}")
-	public TestDetails getTestDetails(@PathVariable int testId) {
-		TestDetails theTestDetails = testDetailsService.findById(testId);
-		if (theTestDetails == null) {
-			throw new RuntimeException("test id not found-" + testId);
-		}
-		return theTestDetails;
-	}
+@GetMapping("/testdetails/{testId}")
+public TestDetails getTestDetails(@PathVariable int testId) {
+TestDetails theTestDetails = testDetailsService.findById(testId);
+if (theTestDetails == null) {
+throw new RuntimeException("test id not found-" + testId);
+}
+return theTestDetails;
+}
 
-	@PostMapping("/testdetails")
-	public TestDetails addTestDetails(@RequestBody TestDetails theTestDetails) {
-//		theEmployee.setId(0);
-		theTestDetails.setTestId(0);
-		testDetailsService.save(theTestDetails);
-		return theTestDetails;
+@PostMapping("/testdetails")
+public TestDetails addTestDetails(@RequestBody TestDetails theTestDetails) {
+theTestDetails.setTestId(0);
+testDetailsService.save(theTestDetails);
+return theTestDetails;
 
-	}
+}
 
-	@PutMapping("/testdetails/{testId}")
-	public TestDetails updateTestDetails(@PathVariable int testId, @RequestBody TestDetails theTestDetails) {
-		TestDetails td = testDetailsService.findById(testId);
-		if (theTestDetails == null) {
-			throw new RuntimeException("test id not found-" + testId);
-		}
+@PutMapping("/testdetails/{testId}")
+public TestDetails updateTestDetails(@PathVariable int testId, @RequestBody TestDetails theTestDetails) {
+TestDetails td = testDetailsService.findById(testId);
+if (theTestDetails == null) {
+throw new RuntimeException("test id not found-" + testId);
+}
 
-		td.setTestId(theTestDetails.getTestId());
-		td.setTestName(theTestDetails.getTestName());
-		td.setTestPrice(theTestDetails.getTestPrice());
-		td.setActive(theTestDetails.isActive());
-		testDetailsService.save(td);
-		return td;
-	}
+td.setTestId(theTestDetails.getTestId());
+td.setTestName(theTestDetails.getTestName());
+td.setTestPrice(theTestDetails.getTestPrice());
+td.setActive(theTestDetails.isActive());
+testDetailsService.save(td);
+return td;
+}
 
-	@DeleteMapping("/testdetails/{testId}")
-	public String deleteTestDetails(@PathVariable int testId) {
-		TestDetails theTestDetails = testDetailsService.findById(testId);
-		if (theTestDetails == null) {
-			throw new RuntimeException("testId not found-" + testId);
-		}
-		testDetailsService.deleteById(testId);
-		return "Deleted testId: " + testId;
+@DeleteMapping("/testdetails/{testId}")
+public String deleteTestDetails(@PathVariable int testId) {
+TestDetails theTestDetails = testDetailsService.findById(testId);
+if (theTestDetails == null) {
+throw new RuntimeException("testId not found-" + testId);
+}
 
-	}
+testDetailsService.deleteById(testId);
+return "Deleted testId: " + testId;
+
+}
+
+
 }
